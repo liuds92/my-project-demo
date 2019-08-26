@@ -1,0 +1,44 @@
+server:
+  port: 8070
+spring:
+  application:
+    name: @pom.artifactId@
+  boot:
+    admin:
+      url: http://localhost:8769
+  cloud:
+      gateway:
+        discovery:
+          locator:
+            enabled: false
+            lowerCaseServiceId: true
+        routes:
+        - id: mycloud-provider-user
+          uri: lb://MYCLOUD-PROVIDER-USER
+          predicates:
+            - Path=/user-api/**
+          filters:
+            - StripPrefix=1
+        - id: mycloud-provider-mall
+          uri: lb://MYCLOUD-PROVIDER-MALL
+          predicates:
+            - Path=/mall-api/**
+          filters:
+            - StripPrefix=1
+
+#base serv cofig
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+  security:
+    enabled: false

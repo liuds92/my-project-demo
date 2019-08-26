@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    config:
+      name: front-app
+      label: master
+      profile: dev
+      uri: http://localhost:9004/
+      username:
+      password:
+      failFast: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest

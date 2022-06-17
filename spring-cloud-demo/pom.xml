@@ -25,7 +25,7 @@
         <mycloud-common.version>1.0.0</mycloud-common.version>
         <mycloud-common-base.version>1.0.0</mycloud-common-base.version>
         <mycloud-common-config.version>1.0.0</mycloud-common-config.version>
-        <fastjson.version>1.2.35</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <spring-cloud-starter-openfeign.version>2.1.0.RELEASE</spring-cloud-starter-openfeign.version>
     </properties>
 
